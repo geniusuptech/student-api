@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "student-api",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "student-wellness-db",
+          "database_id": "5f6240a7-dcdc-469e-8583-9f4acac5c6ff"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "28e65d7c97e5488a96100fe563cc9511",
+            "binding": "SECRET",
+            "secret_name": "d1-student-support-secret"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
